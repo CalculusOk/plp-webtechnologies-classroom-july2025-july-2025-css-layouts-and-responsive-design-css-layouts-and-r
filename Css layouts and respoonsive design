@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox & Grid Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <h1>Responsive Layout</h1>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Welcome to the Future of Web Design</h2>
+      <p>Clean. Responsive. Modern.</p>
+    </section>
+
+    <!-- Grid Layout Section -->
+    <section class="grid-section">
+      <article class="card">Card 1</article>
+      <article class="card">Card 2</article>
+      <article class="card">Card 3</article>
+      <article class="card">Card 4</article>
+    </section>
+
+    <!-- Flexbox Section -->
+    <section class="flex-section">
+      <div class="flex-item">Flex Item 1</div>
+      <div class="flex-item">Flex Item 2</div>
+      <div class="flex-item">Flex Item 3</div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>&copy; 2025 Responsive Demo</p>
+    </footer>
+  </body>
+</html>
+
+
+style.css
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: blue;
+}
+
+/*Header & Navigation*/
+.site-header {
+  background: greenyellow;
+  color: orangered;
+  padding: 1rem;
+}
+
+.navbar ul {
+  display: flex;              /* Flexbox for horizontal nav */
+  justify-content: center;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  color: brown;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  background: purple;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+/* Grid Section */
+.grid-section {
+  display: grid;              
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.card {
+  background: magenta;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Flex Section*/
+.flex-section {
+  display: flex;              
+  justify-content: space-around;
+  padding: 2rem;
+  background: yellowgreen;
+}
+
+.flex-item {
+  background: greenyellow;
+  padding: 1.5rem;
+  border-radius: 5px;
+  flex: 1;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+/*Footer*/
+.site-footer {
+  background: black;
+  color: yellow;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/*Media Queries (Responsive) */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .grid-section {
+    grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 600px) {
+  .grid-section {
+    grid-template-columns: 1fr; /* Single-column layout */
+  }
+  .flex-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .flex-item {
+    margin: 0.5rem 0;
+    width: 80%;
+  }
+}
